@@ -1,0 +1,17 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap");
+.Button {
+  padding: 15px 25px;
+  border-radius: 10px;
+  font-family: "Montserrat", sans-serif;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 800;
+  cursor: pointer;
+  display: flex;
+  gap: 10px;
+}
+.Button:hover {
+  box-shadow: 0 13px 13px rgba(241, 238, 58, 0.2);
+  border-radius: 20px;
+  transform: rotate(20deg);
+}

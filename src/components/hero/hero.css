@@ -1,0 +1,9 @@
+.button:hover {
+  box-shadow: 0 4px 8px rgba(94, 203, 233, 0.2);
+  border-radius: 20px;
+  transform: rotate(30deg);
+}
+.button {
+  border-radius: 10px;
+  cursor: pointer;
+}
