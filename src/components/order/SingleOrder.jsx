@@ -24,6 +24,9 @@ function SingleOrder({
                 Car_Id
               </th>
               <th scope="col" class="px-6 py-3">
+                Order_Id
+              </th>
+              <th scope="col" class="px-6 py-3">
                 Order Date
               </th>
               <th scope="col" class="px-6 py-3">
@@ -49,6 +52,7 @@ function SingleOrder({
                 {carId.model}
               </th>
               <td class="px-6 py-4">{carId._id}</td>
+              <td class="px-6 py-4">{_id}</td>
               <td class="px-6 py-4">{date}</td>
               <td class="px-6 py-4">{pickUpDay}</td>
               <td class="px-6 py-4">{returnDay}</td>

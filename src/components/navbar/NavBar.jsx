@@ -10,6 +10,8 @@ import { FiLogOut } from "react-icons/fi";
 function NavBar({ theme, setTheme }) {
   const navigate = useNavigate();
   let token = localStorage.getItem("token");
+  let isUser = localStorage.getItem("isUser");
+  let isAdmin = localStorage.getItem("isAdmin");
   return (
     <div className=" flex justify-between items-center p-[25px] shadow-md bg-white dark:bg-dark dark:text-white duration-300 sticky top-0 z-30">
       <NavLink to="/">
@@ -63,7 +65,7 @@ function NavBar({ theme, setTheme }) {
       </div>
 
       <div className="flex justify-between  w-[28%] ">
-        {token && (
+        {token && isUser === "true" && !isAdmin ? (
           <NavLink to="/profile">
             <Button
               icon={<FaHouseUser size={17} />}
@@ -73,6 +75,20 @@ function NavBar({ theme, setTheme }) {
               border={"none"}
             />
           </NavLink>
+        ) : (
+          token &&
+          isAdmin === "true" &&
+          !isUser && (
+            <NavLink to="/dashboard">
+              <Button
+                icon={<FaHouseUser size={17} />}
+                title={"dashbord"}
+                backgroundColor={"black"}
+                color={"white"}
+                border={"none"}
+              />
+            </NavLink>
+          )
         )}
         {token ? (
           <NavLink

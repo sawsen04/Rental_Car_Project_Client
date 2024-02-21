@@ -9,8 +9,10 @@ function UserInfoCard({ fullName, email, phone, imageUrl, _id }) {
   //   console.log(imageUrl);
   let token = localStorage.getItem("token");
   const [openModal, setOpenModal] = useState(false);
+  const [openModalPhoto, setOpenModalPhoto] = useState(false);
   const [loading, setloading] = useState(false);
   const [newUserInfo, setnewUserInfo] = useState({});
+  const [newUserPhoto, setnewUserPhoto] = useState();
   const handleUpdateUserInfo = () => {
     setloading(true);
     axios
@@ -25,9 +27,27 @@ function UserInfoCard({ fullName, email, phone, imageUrl, _id }) {
         console.dir(err);
       });
   };
+  const handleUpdateUserPhoto = () => {
+    setloading(true);
+    let formData= new FormData()
+    formData.append("photo",newUserPhoto )
+    axios
+      .put(`${url}/updateUserPhoto/${_id}`, formData, {
+        headers: { token },
+      })
+      .then((res) => {
+        setloading(false);
+        setOpenModalPhoto(false);
+        console.log(res);
+      })
+      .catch((err) => {
+        setloading(false);
+        console.dir(err);
+      });
+  };
   return (
     <>
-      {/* ---------------------Edit--------------- */}
+      {/* ---------------------Edit User Info--------------- */}
       <Modal dismissible show={openModal} onClose={() => setOpenModal(false)}>
         <Modal.Header>Update Informations</Modal.Header>
         <Modal.Body>
@@ -87,7 +107,41 @@ function UserInfoCard({ fullName, email, phone, imageUrl, _id }) {
           </Button>
         </Modal.Footer>
       </Modal>
-     
+      {/* ---------------------Edit User Photo--------------- */}
+      <Modal
+        dismissible
+        show={openModalPhoto}
+        onClose={() => setOpenModalPhoto(false)}
+      >
+        <Modal.Header>Update Photo</Modal.Header>
+        <Modal.Body>
+          <div
+            onChange={(e) => {
+              setnewUserPhoto(e.target.files[0]);
+            }}
+            className="card_info space-y-4"
+          >
+            <div className="mb-2 block">
+              <Label htmlFor="small" value="Profile Photo" />
+            </div>
+            <TextInput name="photo" id="small" type="file" sizing="sm" />
+          </div>
+        </Modal.Body>
+        <Modal.Footer>
+          <Button
+            className="inline-flex items-center px-4 py-2 text-sm font-medium text-center text-white bg-[#ffa839] rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-[#ffa839]  dark:focus:ring-blue-800"
+            onClick={() => {
+              handleUpdateUserPhoto();
+            }}
+            loading={loading}
+          >
+            Save
+          </Button>
+          <Button color="gray" onClick={() => setOpenModalPhoto(false)}>
+            Cancel
+          </Button>
+        </Modal.Footer>
+      </Modal>
       <div>
         <div class="w-full  bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
           <div class="flex flex-col items-center pb-10">
@@ -109,13 +163,21 @@ function UserInfoCard({ fullName, email, phone, imageUrl, _id }) {
             </span>
             <div class="flex mt-4 md:mt-6">
               {/* ----Edit user info--- */}
-              <Button
-                className="inline-flex items-center px-4 py-2 text-sm font-medium text-center text-white bg-[#ffa839] rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-[#ffa839]  dark:focus:ring-blue-800"
-                onClick={() => setOpenModal(true)}
-              >
-                Edit
-              </Button>
-              
+              <div className="flex gap-5">
+                <Button
+                  className="inline-flex items-center px-4 py-2 text-sm font-medium text-center text-white bg-[#ffa839] rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-[#ffa839]  dark:focus:ring-blue-800"
+                  onClick={() => setOpenModal(true)}
+                >
+                  Edit
+                </Button>
+                {/* ----Edit user photo--- */}
+                <Button
+                  className="inline-flex items-center px-4 py-2 text-sm font-medium text-center text-white bg-[#ffa839] rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-[#ffa839]  dark:focus:ring-blue-800"
+                  onClick={() => setOpenModalPhoto(true)}
+                >
+                  Edit Photo
+                </Button>
+              </div>
             </div>
           </div>
         </div>

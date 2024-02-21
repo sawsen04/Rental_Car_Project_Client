@@ -9,11 +9,11 @@ import { GrInstagram } from "react-icons/gr";
 import { TiSocialLinkedinCircular } from "react-icons/ti";
 function Footer() {
   return (
-    <div className=" footer  ">
+    <div className=" footer ">
       <div
         data-aos="fade-up"
         data-aos-duration="1000"
-        className="flex gap-[10%] pt-9 pb-[90px]  px-10"
+        className="flex gap-[10%] pt-9 pb-[30px]  px-10"
       >
         <FooterElt
           title={"About Company"}
@@ -62,8 +62,8 @@ function Footer() {
           </div>
         </div>
       </div>
-      <div className=" h-[43px]  text-white">
-        <h1 className="px-10 pt-5 font-normal">
+      <div className="   text-white">
+        <h1 className="px-10 pt-16 font-normal">
           © 2023 Dreams Rent. All Rights Reserved.
         </h1>
       </div>

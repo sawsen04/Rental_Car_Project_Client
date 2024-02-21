@@ -24,7 +24,11 @@ function Login() {
         localStorage.setItem("id", res.data.data.id);
         setTimeout(() => {
           setLoading(false);
-          navigate("/profile");
+          if (res.data.data.isUser && !res.data.data.isAdmin) {
+            navigate("/profile");
+          } else if (res.data.data.isAdmin && !res.data.data.isUser) {
+            navigate("/dashboard");
+          }
         }, 2000);
       })
       .catch((err) => {

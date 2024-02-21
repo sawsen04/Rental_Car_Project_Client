@@ -10,8 +10,11 @@ import Register from "./pages/register/Register";
 import ContactUs from "./pages/contactUs/ContacUs";
 import AboutUs from "./pages/aboutUs/AboutUs";
 import RentNow from "./pages/rentOrder/RentNow";
-import PrivateRoute from "./routes/PrivateRoute";
+//import PrivateRoute from "./routes/PrivateRoute";
 import PublicRoute from "./routes/PublicRoute";
+import UserRoute from "./routes/UserRoute";
+import AdminRoute from "./routes/AdminRoute";
+import AdminDashboard from "./pages/adminDashboard/AdminDashboard";
 function App() {
   const [theme, setTheme] = useState("light");
   const element = document.documentElement;
@@ -53,9 +56,17 @@ function App() {
         <Route
           path="profile"
           element={
-            <PrivateRoute>
+            <UserRoute>
               <Profile />
-            </PrivateRoute>
+            </UserRoute>
+          }
+        />
+        <Route
+          path="dashboard"
+          element={
+            <AdminRoute>
+              <AdminDashboard />
+            </AdminRoute>
           }
         />
         <Route path="cars" element={<Cars />} />
