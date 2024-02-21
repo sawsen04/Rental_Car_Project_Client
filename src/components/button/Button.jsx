@@ -4,8 +4,16 @@ function Button(props) {
   return (
     <div>
       <button
+        type="button"
         className="Button"
-        style={{border: props.border, backgroundColor: props.backgroundColor, color: props.color }}
+        style={{
+          border: props.border,
+          backgroundColor: props.backgroundColor,
+          color: props.color,
+        }}
+        onClick={() => {
+          props.fn && props.fn();
+        }}
       >
         {props.icon}
         {props.title}

@@ -8,8 +8,9 @@ import sportsCoupe from "../../assets/sportsCoupe.png";
 import "react-slideshow-image/dist/styles.css";
 import "./style.css";
 import { HiArrowLongRight } from "react-icons/hi2";
+import { NavLink } from "react-router-dom";
+import Button from "../button/Button";
 const images = [pickup, crossover, familyMPV, sedan, sportsCoupe];
-
 const zoomOutProperties = {
   duration: 5000,
   transitionDuration: 500,
@@ -37,6 +38,7 @@ const Slideshow = () => {
   );
 };
 function SecFoor() {
+ // const navigate = useNavigate();
   return (
     <div className="pb-24 pt-12 dark:bg-dark bg-slate-100 dark:text-white">
       <div className="flex flex-col justify-center items-center">
@@ -56,13 +58,20 @@ function SecFoor() {
       <div className="slides">
         <Slideshow />
       </div>
-      <div>
-        <button
+      <div className="flex justify-center items-center w-[100%] mt-20">
+        <NavLink
           data-aos="fade-up"
-          className="border-2 border-black font-semibold px-4 py-2 rounded-lg hover:bg-primary hover:text-white hover:border-primary hover:duration-300 flex items-center gap-2 m-auto my-10"
+          className="font-semibold rounded-lg "
+          to="/cars"
         >
-          View all Cars <HiArrowLongRight size={35} />
-        </button>
+          <Button
+            icon={<HiArrowLongRight size={17} />}
+            title={"View all cars"}
+            backgroundColor={"orange"}
+            color={"white"}
+            border={"none"}
+          />
+        </NavLink>
       </div>
     </div>
   );

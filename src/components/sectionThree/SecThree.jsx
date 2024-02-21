@@ -7,6 +7,11 @@ import { BsFillFuelPumpFill } from "react-icons/bs";
 import { MdCarRental } from "react-icons/md";
 import Button from "../button/Button";
 function SecThree() {
+  //-------button-filter---------
+  // const [selectedCategory, setselectedCategory] = useState(null);
+  // const handleClick= event=> {
+  //   setselectedCategory(event.target.value)
+  // }
   return (
     <div className="pb-24 pt-12 bg-white dark:bg-dark dark:text-white">
       <div className="container">

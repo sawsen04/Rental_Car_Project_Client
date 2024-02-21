@@ -9,7 +9,7 @@ function Search() {
   return (
     <div
       data-aos="fade-up"
-      data-aos-duration="1500"
+      data-aos-duration="2000"
       className="dark:bg-dark dark:text-white duration-300  rounded-lg shadow-xl shadow-slate-600  flex  justify-center items-center gap-[150px] h-[17vh] w-[80%] mx-[150px] -mt-10 bg-slate-100  drop-shadow-2xl  "
     >
       <div className="pickup flex flex-col gap-3 font-bold">

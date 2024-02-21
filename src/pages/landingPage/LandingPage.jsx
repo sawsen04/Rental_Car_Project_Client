@@ -1,10 +1,12 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import "./home.css";
 import Hero from "../../components/hero/Hero";
 import Search from "../../components/sectionOneSearch/Search";
 import HowItWorks from "../../components/sectionTwo/HowItWorks";
 import SecThree from "../../components/sectionThree/SecThree";
 import SecFoor from "../../components/sectionFoor/SecFoor";
+import WhyShooseUs from "../../components/sectionFive/WhyShooseUs";
+import AppSec from "../../components/sectionSix/AppSec";
 
 function LandingPage({ theme }) {
   // const [theme] = useState(
@@ -27,6 +29,8 @@ function LandingPage({ theme }) {
       <HowItWorks />
       <SecThree />
       <SecFoor />
+      <WhyShooseUs />
+      <AppSec />
     </div>
   );
 }

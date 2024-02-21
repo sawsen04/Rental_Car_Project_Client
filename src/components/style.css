@@ -1,0 +1,19 @@
+.SLIDES {
+  border: 2px black solid;
+  background-position: center;
+  width: 100%;
+}
+.splide-container {
+  border: 3px #0000ff solid;
+  width: 100%;
+
+  /* height: ; */
+}
+.thumb-container {
+  border: 3px red solid;
+  width: 100%;
+}
+.wrapper {
+  border: 3px green solid;
+  width: 80%;
+}

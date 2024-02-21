@@ -1,10 +1,17 @@
 import React, { useState } from "react";
 import "./register.css";
 import axios from "axios";
+import {useNavigate} from "react-router-dom"
+import { PulseLoader } from "react-spinners";
 function Register() {
+  const navigate = useNavigate();
   const [showPass, setShowPass] = useState(false);
   const [registerData, setRegisterData] = useState({});
+  const [loading, setLoading] = useState(false);
+  const [message, setMessage] = useState("");
+  const [error, setError] = useState("");
   const handleRegister = () => {
+    setLoading(true);
     axios
       .post(
         "https://rentalcar-api.onrender.com/api/user/register",
@@ -17,8 +24,23 @@ function Register() {
       )
       .then((res) => {
         console.log(res);
+        setLoading(false);
+        setMessage("Your account was created successfuly");
+        setTimeout(() => {
+          navigate ("/login")
+        }, 3000);
       })
       .catch((err) => {
+        if (err.response.data.error.email) {
+          setError(err.response.data.error.email.message);
+          setLoading(false);
+        } else {
+          setError(err.response.data.error);
+          setLoading(false);
+        }
+        setTimeout(() => {
+          setError("");
+        }, 10000);
         console.dir(err);
       });
   };
@@ -120,19 +142,74 @@ function Register() {
                     </label>
                   </div>
                 </div>
+                {error && (
+                  <div
+                    class="bg-teal-100 border-t-4 border-teal-500 rounded-b text-teal-900 px-4 py-3 shadow-md"
+                    role="alert"
+                  >
+                    <div class="flex">
+                      <div class="py-1">
+                        <svg
+                          class="fill-current h-6 w-6 text-teal-500 mr-4"
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 20 20"
+                        >
+                          <path d="M2.93 17.07A10 10 0 1 1 17.07 2.93 10 10 0 0 1 2.93 17.07zm12.73-1.41A8 8 0 1 0 4.34 4.34a8 8 0 0 0 11.32 11.32zM9 11V9h2v6H9v-4zm0-6h2v2H9V5z" />
+                        </svg>
+                      </div>
+                      <div>
+                        <p class="font-bold">OOOOPPPS! 🤕</p>
+                        <p class="text-sm">{error}</p>
+                      </div>
+                    </div>
+                  </div>
+                )}
+                {message && (
+                  <div
+                    class="bg-teal-100 border-t-4 border-teal-500 rounded-b text-teal-900 px-4 py-3 shadow-md"
+                    role="alert"
+                  >
+                    <div class="flex">
+                      <div class="py-1">
+                        <svg
+                          class="fill-current h-6 w-6 text-teal-500 mr-4"
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 20 20"
+                        >
+                          <path d="M2.93 17.07A10 10 0 1 1 17.07 2.93 10 10 0 0 1 2.93 17.07zm12.73-1.41A8 8 0 1 0 4.34 4.34a8 8 0 0 0 11.32 11.32zM9 11V9h2v6H9v-4zm0-6h2v2H9V5z" />
+                        </svg>
+                      </div>
+                      <div>
+                        <p class="font-bold">{message} 🥳</p>
+                        <p class="text-sm">
+                          You will be redirect to the login page
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                )}
                 <button
-                  className="bg-primary p-4 rounded-lg font-bold text-sm"
+                  className="bg-primary p-4 min-w-[150px] rounded-lg font-bold text-sm"
                   onClick={() => {
                     handleRegister();
                   }}
                   type="button"
                 >
-                  Create an account
+                  {loading ? (
+                    <PulseLoader color="rgba(0, 0, 0, 0.68)" size={8} />
+                  ) : (
+                    "Create an account"
+                  )}
                 </button>
                 <p class="text-sm font-light text-gray-500 dark:text-gray-400">
                   Already have an account?{" "}
                   <a
-                    href="#"
+                    onClick={() => {
+                      setTimeout(() => {
+                        navigate("/login");
+                      }, 1000);
+                    }}
+                    href="#/"
                     class="font-medium text-primary-600 hover:underline dark:text-primary-500"
                   >
                     Login here
