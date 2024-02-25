@@ -1,21 +1,23 @@
 import React from "react";
-import { MdOutlineKeyboardArrowDown } from "react-icons/md";
+// import { MdOutlineKeyboardArrowDown } from "react-icons/md";
 function SideBarCars({ min, max, setMin, setMax, setGear, brand, setBrand }) {
   // console.log("brand:", brand);
   return (
-    <div>
-      <div className="sticky top-[2vh] filter border-2 bg-white border-red-500 h-[100vh] w-[250px] p-3 rounded-xl drop-shadow-[2px_20px_6px_rgba(0,0,0,0.50)] ">
+    <div className="sticky top-[110px] bg-white dark:bg-dark dark:text-white h-[83vh] rounded-xl drop-shadow-[4px_4px_8px_rgba(0,0,2,2.60)]">
+      <div className="sticky top-[110px]  h-[83vh] w-[250px] p-3 rounded-xl drop-shadow-[1px_1px_1px_orange] ">
         <div>
           <div className="filter divide-y-4 divide-slate-400/25 flex flex-col gap-6">
             <div className="Car-category pt-3">
-              <div className=" flex justify-between items-center text-sm font-semibold">
-                <h1 className="font-bold text-[18px]">Car Brand</h1>
-                <MdOutlineKeyboardArrowDown size={30} />
+              <div className=" flex justify-between items-center text-sm font-semibold pb-2">
+                <h1 className="font-bold text-[18px] underline decoration-primary">
+                  Car Brand
+                </h1>
               </div>
               <div>
                 <ul className="flex flex-col gap-2 ">
-                  <li className="flex gap-2">
+                  <li className="flex gap-2 font-medium ">
                     <input
+                      className="rounded-sm"
                       type="checkbox"
                       name="brand"
                       value=""
@@ -26,8 +28,9 @@ function SideBarCars({ min, max, setMin, setMax, setGear, brand, setBrand }) {
                     />
                     All
                   </li>
-                  <li className="flex gap-2">
+                  <li className="flex gap-2 font-medium">
                     <input
+                      className="rounded-sm"
                       type="checkbox"
                       name="brand"
                       value="Toyota"
@@ -42,8 +45,9 @@ function SideBarCars({ min, max, setMin, setMax, setGear, brand, setBrand }) {
                     />
                     Toyota
                   </li>
-                  <li className="flex gap-2">
+                  <li className="flex gap-2 font-medium">
                     <input
+                      className="rounded-sm"
                       type="checkbox"
                       name="brand"
                       value="Kia"
@@ -58,8 +62,9 @@ function SideBarCars({ min, max, setMin, setMax, setGear, brand, setBrand }) {
                     />
                     Kia
                   </li>
-                  <li className="flex gap-2">
+                  <li className="flex gap-2 font-medium">
                     <input
+                      className="rounded-sm"
                       type="checkbox"
                       name="brand"
                       value="Volkswagen"
@@ -74,8 +79,9 @@ function SideBarCars({ min, max, setMin, setMax, setGear, brand, setBrand }) {
                     />
                     Volkswagen
                   </li>
-                  <li className="flex gap-2">
+                  <li className="flex gap-2 font-medium">
                     <input
+                      className="rounded-sm"
                       type="checkbox"
                       name="brand"
                       value="Chevrolet"
@@ -90,8 +96,9 @@ function SideBarCars({ min, max, setMin, setMax, setGear, brand, setBrand }) {
                     />
                     Chevrolet
                   </li>
-                  <li className="flex gap-2">
+                  <li className="flex gap-2 font-medium">
                     <input
+                      className="rounded-sm"
                       type="checkbox"
                       name="brand"
                       value="Audi"
@@ -110,13 +117,14 @@ function SideBarCars({ min, max, setMin, setMax, setGear, brand, setBrand }) {
               </div>
             </div>
             <div className="Car-gearbox pt-3">
-              <div className="flex justify-between items-center text-sm font-semibold">
-                <h1 className="font-bold text-[18px]">Gear Box</h1>
-                <MdOutlineKeyboardArrowDown size={30} />
+              <div className="flex justify-between items-center text-sm font-semibold pb-2">
+                <h1 className="font-bold text-[18px] underline decoration-primary">
+                  Gear Box
+                </h1>
               </div>
               <div>
                 <ul className="flex flex-col gap-2 ">
-                  <li className="flex gap-2">
+                  <li className="flex gap-2 font-medium">
                     <input
                       type="radio"
                       name="gear-type"
@@ -127,7 +135,7 @@ function SideBarCars({ min, max, setMin, setMax, setGear, brand, setBrand }) {
                     />
                     All
                   </li>
-                  <li className="flex gap-2">
+                  <li className="flex gap-2 font-medium">
                     <input
                       type="radio"
                       name="gear-type"
@@ -138,7 +146,7 @@ function SideBarCars({ min, max, setMin, setMax, setGear, brand, setBrand }) {
                     />
                     Auto
                   </li>
-                  <li className="flex gap-2">
+                  <li className="flex gap-2 font-medium">
                     <input
                       type="radio"
                       name="gear-type"
@@ -153,16 +161,17 @@ function SideBarCars({ min, max, setMin, setMax, setGear, brand, setBrand }) {
               </div>
             </div>
             <div className="Price pt-3">
-              <div className=" flex justify-between items-center text-sm font-semibold">
-                <h1 className="font-bold text-[18px]">price</h1>
-                <MdOutlineKeyboardArrowDown size={30} />
+              <div className=" flex justify-between items-center text-sm font-semibold pb-2">
+                <h1 className="font-bold text-[18px] underline decoration-primary">
+                  price
+                </h1>
               </div>
               <div>
-                <ul className="flex flex-col gap-2 ">
-                  <li className="flex gap-2">
-                    <label>Min</label>
+                <ul className="flex flex-col  gap-2 ">
+                  <li className="flex gap-4 items-center">
+                    <label className="text font-medium ">Min</label>
                     <input
-                      className="border-2 border-black w-[70%]"
+                      className="w-[50%] border-x-2  border-y-4 rounded-lg border-x-blue-300 border-yellow-400 bg-white dark:bg-dark dark:text-white"
                       type="number"
                       min={100}
                       defaultValue={min}
@@ -171,10 +180,10 @@ function SideBarCars({ min, max, setMin, setMax, setGear, brand, setBrand }) {
                       }}
                     />
                   </li>
-                  <li className="flex gap-2">
-                    <label htmlFor="">Max</label>
+                  <li className="flex gap-4 items-center">
+                    <label className="text-black font-medium">Max</label>
                     <input
-                      className="border-2 border-black w-[70%]"
+                      className="w-[50%] border-x-2  border-y-4 rounded-lg border-x-blue-300 border-yellow-400 bg-white dark:bg-dark dark:text-white"
                       type="number"
                       max={500}
                       min={min}

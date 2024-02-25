@@ -27,7 +27,7 @@ function Login() {
           if (res.data.data.isUser && !res.data.data.isAdmin) {
             navigate("/profile");
           } else if (res.data.data.isAdmin && !res.data.data.isUser) {
-            navigate("/dashboard");
+            navigate("/adminProfile");
           }
         }, 2000);
       })
@@ -144,6 +144,20 @@ function Login() {
                     "Login"
                   )}
                 </button>
+                <p class="text-sm font-light text-gray-500 dark:text-gray-400">
+                  Don't have an account yet?{" "}
+                  <a
+                    onClick={() => {
+                      setTimeout(() => {
+                        navigate("/register");
+                      }, 1000);
+                    }}
+                    href="#/"
+                    class="font-medium text-primary-600 hover:underline dark:text-primary-500"
+                  >
+                    Sign Up
+                  </a>
+                </p>
               </form>
             </div>
           </div>

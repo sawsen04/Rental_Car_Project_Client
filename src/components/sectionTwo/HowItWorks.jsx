@@ -31,7 +31,7 @@ function HowItWorks() {
     },
   ];
   return (
-    <div className=" mt-4 px-20 py-20 dark:bg-black dark:text-white sm:min-h[600px]">
+    <div className="  px-20 py-20 dark:bg-black dark:text-white sm:min-h[600px]">
       <div className="container">
         <div className="pb-12">
           <h1 className="text-3xl font-extrabold text-center sm:text-4xl">

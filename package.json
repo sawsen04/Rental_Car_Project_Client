@@ -12,6 +12,7 @@
     "autoprefixer": "^10.4.17",
     "axios": "^1.6.7",
     "flowbite-react": "^0.7.2",
+    "photoswipe": "^5.4.3",
     "postcss": "^8.4.35",
     "primereact": "^10.5.0",
     "react": "^18.2.0",
@@ -22,6 +23,7 @@
     "react-scripts": "5.0.1",
     "react-slideshow-image": "^4.3.0",
     "react-spinners": "^0.13.8",
+    "react-toastify": "^10.0.4",
     "semantic-ui-css": "^2.5.0",
     "semantic-ui-react": "^2.1.5",
     "web-vitals": "^2.1.4"

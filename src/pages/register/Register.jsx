@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./register.css";
 import axios from "axios";
-import {useNavigate} from "react-router-dom"
+import { useNavigate } from "react-router-dom";
 import { PulseLoader } from "react-spinners";
 function Register() {
   const navigate = useNavigate();
@@ -27,7 +27,7 @@ function Register() {
         setLoading(false);
         setMessage("Your account was created successfuly");
         setTimeout(() => {
-          navigate ("/login")
+          navigate("/login");
         }, 3000);
       })
       .catch((err) => {
@@ -88,7 +88,7 @@ function Register() {
                     type="phone"
                     name="phone"
                     class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                    placeholder="(+216)..."
+                    placeholder="(+216) 00 000 000"
                     required=""
                   />
                 </div>

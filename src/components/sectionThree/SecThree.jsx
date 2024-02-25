@@ -1,17 +1,26 @@
-import React from "react";
-import { popularCarData } from "../../popularCarsHome";
-import { CgCalendarDates } from "react-icons/cg";
-import { AiFillDashboard } from "react-icons/ai";
-import { GiSteeringWheel } from "react-icons/gi";
-import { BsFillFuelPumpFill } from "react-icons/bs";
-import { MdCarRental } from "react-icons/md";
+import React, { useState } from "react";
+// import { popularCarData } from "../../popularCarsHome";
+// import { CgCalendarDates } from "react-icons/cg";
+// import { AiFillDashboard } from "react-icons/ai";
+// import { GiSteeringWheel } from "react-icons/gi";
+// import { BsFillFuelPumpFill } from "react-icons/bs";
+// import { MdCarRental } from "react-icons/md";
+import CardCar from "../card/CardCar";
 import Button from "../button/Button";
+import { url } from "../../utils/url";
+import { DotLoader } from "react-spinners";
+import { useFetch } from "../../utils/useFetch";
 function SecThree() {
+  const { data } = useFetch(`${url}/cars`);
   //-------button-filter---------
-  // const [selectedCategory, setselectedCategory] = useState(null);
+  const [selectedCategory, setselectedCategory] = useState("");
+  // console.log(selectedCategory);
   // const handleClick= event=> {
   //   setselectedCategory(event.target.value)
   // }
+  const handleFilterCategory = (cat) => {
+    setselectedCategory(cat);
+  };
   return (
     <div className="pb-24 pt-12 bg-white dark:bg-dark dark:text-white">
       <div className="container">
@@ -31,6 +40,15 @@ function SecThree() {
         </div>
         <div data-aos="fade-up" className="flex justify-center gap-10 m-10 ">
           <Button
+            title={"All"}
+            backgroundColor={"white"}
+            color={"black"}
+            border={"1px black solid"}
+            fn={() => {
+              handleFilterCategory("");
+            }}
+          />
+          <Button
             icon={
               <img
                 src="https://uploads.audi-mediacenter.com/system/production/media/1282/images/bde751ee18fe149036c6b47d7595f6784f8901f8/AL090142_web_2880.jpg?1698171883"
@@ -42,6 +60,9 @@ function SecThree() {
             backgroundColor={"white"}
             color={"black"}
             border={"1px black solid"}
+            fn={() => {
+              handleFilterCategory("Audi");
+            }}
           />
           <Button
             icon={
@@ -55,6 +76,9 @@ function SecThree() {
             backgroundColor={"white"}
             color={"black"}
             border={"1px black solid"}
+            fn={() => {
+              handleFilterCategory("Kia");
+            }}
           />
 
           <Button
@@ -65,10 +89,13 @@ function SecThree() {
                 alt=""
               />
             }
-            title={"chevrolet"}
+            title={"Chevrolet"}
             backgroundColor={"white"}
             color={"black"}
             border={"1px black solid"}
+            fn={() => {
+              handleFilterCategory("Chevrolet");
+            }}
           />
           <Button
             icon={
@@ -82,6 +109,9 @@ function SecThree() {
             backgroundColor={"white"}
             color={"black"}
             border={"1px black solid"}
+            fn={() => {
+              handleFilterCategory("Toyota");
+            }}
           />
           <Button
             icon={
@@ -95,6 +125,9 @@ function SecThree() {
             backgroundColor={"white"}
             color={"black"}
             border={"1px black solid"}
+            fn={() => {
+              handleFilterCategory("Volkswagen");
+            }}
           />
         </div>
         {/*car listing*/}
@@ -104,7 +137,20 @@ function SecThree() {
             data-aos-duration={1000}
             className=" flex justify-center flex-wrap  gap-x-20 gap-y-10"
           >
-            {popularCarData.map((data) => {
+            {data ? (
+              data
+                .filter((car) => car.brand.includes(selectedCategory))
+                .map((car, i) => (
+                  <CardCar
+                    key={i}
+                    {...car}
+                    selectedCategory={selectedCategory}
+                  />
+                ))
+            ) : (
+              <DotLoader color="#f76839" size={70} />
+            )}
+            {/* {popularCarData.map((data) => {
               return (
                 <div>
                   <div
@@ -160,7 +206,7 @@ function SecThree() {
                   </div>
                 </div>
               );
-            })}
+            })} */}
           </div>
         </div>
       </div>

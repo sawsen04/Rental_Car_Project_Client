@@ -5,20 +5,6 @@ import Footer from "../components/footer/Footer";
 import Aos from "aos";
 import "aos/dist/aos.css";
 function PublicLayout({ theme, setTheme }) {
-  //dark mode feature
-  // const [theme, setTheme] = useState("light");
-  // const element = document.documentElement;
-  // useEffect(() => {
-  //   if (theme === "dark") {
-  //     element.classList.add("dark");
-  //     localStorage.setItem("theme", "dark");
-  //   } else {
-  //     element.classList.remove("dark");
-  //     localStorage.setItem("theme", "light");
-  //   }
-  // });
-
-  //AOS Initialization
   React.useEffect(() => {
     Aos.init({
       offset: 100,

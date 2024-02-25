@@ -13,7 +13,7 @@ function Footer() {
       <div
         data-aos="fade-up"
         data-aos-duration="1000"
-        className="flex gap-[10%] pt-9 pb-[30px]  px-10"
+        className="flex gap-[10%] pt-9 pb-[15px]  px-10"
       >
         <FooterElt
           title={"About Company"}

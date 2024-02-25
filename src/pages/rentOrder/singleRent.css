@@ -1,7 +1,99 @@
 .bg-img {
   background-image: url(https://t3.ftcdn.net/jpg/04/35/06/90/360_F_435069064_rDVH1Q0beyCcTAEpzRs9A4uBRduYAnur.jpg);
-  height: 25vh;
+  height: 20vh;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+}
+
+.btn {
+  position: relative;
+  font-family: inherit;
+  font-size: 18px;
+  font-weight: 600;
+  border-radius: 40em;
+  width: 10em;
+  height: 3em;
+  z-index: 1;
+  color: white;
+  cursor: pointer;
+  overflow: hidden;
+  border: none;
+  margin: auto;
+}
+
+.btn .text {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  line-height: 3em;
+  border-radius: 40em;
+  border: none;
+  background: linear-gradient(
+    rgba(255, 255, 255, 0.473),
+    rgba(150, 150, 150, 0.25)
+  );
+  z-index: 1;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.btn .blob {
+  position: absolute;
+  z-index: -1;
+  border-radius: 5em;
+  width: 5em;
+  height: 3em;
+  transition: transform 0.3s ease-in-out, background 0.3s ease-in-out;
+}
+
+.btn .blob:nth-child(2) {
+  left: 0em;
+  top: 0;
+  background: #ff930f;
+}
+
+.btn .blob:nth-child(3) {
+  left: 1.8em;
+  top: 0;
+  z-index: -1;
+  background: #bf0fff;
+}
+
+.btn .blob:nth-child(4) {
+  left: 4em;
+  top: -1em;
+  background: #ff1b6b;
+}
+
+.btn .blob:nth-child(5) {
+  left: 4.3em;
+  top: 1.6em;
+  background: #0061ff;
+}
+
+.btn:hover .blob:nth-child(2) {
+  background: #0061ff;
+}
+
+.btn:hover .blob:nth-child(3) {
+  background: #ff1b6b;
+}
+
+.btn:hover .blob:nth-child(4) {
+  background: #bf0fff;
+}
+
+.btn:hover .blob:nth-child(5) {
+  background: #ff930f;
+}
+
+.btn:hover .blob {
+  transform: scale(1.3);
+}
+
+.btn:active {
+  border: 2px solid white;
 }

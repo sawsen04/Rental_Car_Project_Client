@@ -1,20 +1,22 @@
 import React from "react";
 import "./profile.css";
 import { url } from "../../utils/url";
-import { DotLoader } from "react-spinners";
 import { useFetch } from "../../utils/useFetch";
+import { DotLoader } from "react-spinners";
 import SingleOrder from "../../components/order/SingleOrder";
+import "./profile.css";
 import UserInfoCard from "../../components/userInfo/UserInfoCard";
 
-const token = localStorage.getItem("token");
 function Profile() {
-  const { data } = useFetch(`${url}/ownOrder`, token);
+  const token = localStorage.getItem("token");
   const userData = useFetch(`${url}/getUserInfo`, token);
- 
+  const { data } = useFetch(`${url}/ownOrder`, token);
+
+  // console.log(userData?.data);
   return (
     <div>
       <div className="user-infos">
-        <UserInfoCard {...userData.data} />
+        <UserInfoCard {...userData?.data} />
       </div>
       <div className="orders-list flex flex-col">
         {data ? (

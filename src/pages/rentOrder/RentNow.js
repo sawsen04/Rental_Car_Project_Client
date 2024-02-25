@@ -15,7 +15,7 @@ function RentNow() {
   return (
     <div>
       <div data-aos="fade-up" data-aos-duration={1000} className="">
-        {data ? <SingleRent {...data} /> : <DotLoader color="#f76839" size={70} />}
+        {data ? <SingleRent {...data} /> : <DotLoader className="m-auto" color="#f76839" size={70} />}
       </div>
     </div>
   );

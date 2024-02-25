@@ -11,7 +11,7 @@ function Hero({ theme }) {
   // let theme = localStorage.getItem("theme");
   //const navigate = useNavigate();
   return (
-    <div className=" relative flex  overflow-hidden dark:bg-black dark:text-white duration-300 p-0 h-[75vh]">
+    <div className=" relative flex  overflow-hidden dark:bg-black dark:text-white duration-300 p-0 h-[73vh]">
       {/* className="mb-12 dark:bg-black dark:text-white duration-300 py-[13vh] relative
       -z-20" */}
       <div className="container p-0">

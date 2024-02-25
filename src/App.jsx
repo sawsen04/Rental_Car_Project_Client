@@ -14,7 +14,11 @@ import RentNow from "./pages/rentOrder/RentNow";
 import PublicRoute from "./routes/PublicRoute";
 import UserRoute from "./routes/UserRoute";
 import AdminRoute from "./routes/AdminRoute";
-import AdminDashboard from "./pages/adminDashboard/AdminDashboard";
+
+import Users from "./pages/users/Users";
+import AdminProfile from "./pages/adminProfile/AdminProfile";
+import Orders from "./pages/ordersDashboard/Orders";
+import AddProduct from "./pages/addProductDashboard/AddProduct";
 function App() {
   const [theme, setTheme] = useState("light");
   const element = document.documentElement;
@@ -61,11 +65,43 @@ function App() {
             </UserRoute>
           }
         />
-        <Route
+        {/* <Route
           path="dashboard"
           element={
             <AdminRoute>
               <AdminDashboard />
+            </AdminRoute>
+          }
+        /> */}
+        <Route
+          path="users"
+          element={
+            <AdminRoute>
+              <Users />
+            </AdminRoute>
+          }
+        />
+        <Route
+          path="adminProfile"
+          element={
+            <AdminRoute>
+              <AdminProfile />
+            </AdminRoute>
+          }
+        />
+        <Route
+          path="orders"
+          element={
+            <AdminRoute>
+              <Orders />
+            </AdminRoute>
+          }
+        />
+        <Route
+          path="addProduct"
+          element={
+            <AdminRoute>
+              <AddProduct />
             </AdminRoute>
           }
         />

@@ -1,5 +1,6 @@
 import React from "react";
 import "./style.css";
+import { Link } from "react-router-dom";
 function SingleOrder({
   _id,
   pickUpDay,
@@ -51,7 +52,9 @@ function SingleOrder({
               >
                 {carId.model}
               </th>
-              <td class="px-6 py-4">{carId._id}</td>
+              <td class="px-6 py-4">
+                <Link to={`/RentNow/${carId._id}`}>{carId._id}</Link>
+              </td>
               <td class="px-6 py-4">{_id}</td>
               <td class="px-6 py-4">{date}</td>
               <td class="px-6 py-4">{pickUpDay}</td>
@@ -60,7 +63,7 @@ function SingleOrder({
               <td class="px-6 py-4">
                 {isPaid
                   ? "This order is paid ✅"
-                  : "Please visit us to pay your order 😊"}
+                  : " You Have 24H To Pay Your Order ⏳"}
               </td>
             </tr>
           </tbody>
