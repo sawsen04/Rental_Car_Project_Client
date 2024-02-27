@@ -18,7 +18,10 @@ function Register() {
         registerData,
         {
           headers: {
-            "access-control-allow-origin": "http://localhost:3000",
+            "access-control-allow-origin": [
+              "https://dreams-rent-agency.netlify.app/",
+              "http://localhost:3000",
+            ],
           },
         }
       )
