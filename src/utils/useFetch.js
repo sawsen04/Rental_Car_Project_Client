@@ -6,7 +6,13 @@ export const useFetch = (url, token) => {
   useEffect(() => {
     if (token) {
       axios
-        .get(url, { headers: { token } })
+        .get(url, {
+          headers: {
+            token,
+            "access-control-allow-origin":
+              "https://dreams-rent-agency.netlify.app/",
+          },
+        })
         .then((res) => {
           // console.log(res);
           setData(res.data.data);
@@ -19,7 +25,12 @@ export const useFetch = (url, token) => {
         });
     } else {
       axios
-        .get(url)
+        .get(url, {
+          headers: {
+            "access-control-allow-origin":
+              "https://dreams-rent-agency.netlify.app/",
+          },
+        })
         .then((res) => {
           // console.log(res);
           setData(res.data.data);

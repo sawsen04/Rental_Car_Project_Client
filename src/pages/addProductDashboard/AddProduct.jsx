@@ -27,7 +27,13 @@ function AddProduct() {
     productFormData.append("gearBox", gearBox);
     productFormData.append("pricePerDay", Number(pricePerDay));
     axios
-      .post(`${adminUrl}/addCar`, productFormData, { headers: { token } })
+      .post(`${adminUrl}/addCar`, productFormData, {
+        headers: {
+          token,
+          "access-control-allow-origin":
+            "https://dreams-rent-agency.netlify.app/",
+        },
+      })
       .then((res) => {
         // console.log(res);
         setLoading(false);

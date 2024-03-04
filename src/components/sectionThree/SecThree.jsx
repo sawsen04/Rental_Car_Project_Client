@@ -11,7 +11,11 @@ import { url } from "../../utils/url";
 import { DotLoader } from "react-spinners";
 import { useFetch } from "../../utils/useFetch";
 function SecThree() {
-  const { data } = useFetch(`${url}/cars`);
+  const { data } = useFetch(`${url}/cars`, {
+    headers: {
+      "access-control-allow-origin": "https://dreams-rent-agency.netlify.app/",
+    },
+  });
   //-------button-filter---------
   const [selectedCategory, setselectedCategory] = useState("");
   // console.log(selectedCategory);

@@ -3,6 +3,7 @@ import "./register.css";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { PulseLoader } from "react-spinners";
+import { url } from "../../utils/url";
 function Register() {
   const navigate = useNavigate();
   const [showPass, setShowPass] = useState(false);
@@ -13,18 +14,12 @@ function Register() {
   const handleRegister = () => {
     setLoading(true);
     axios
-      .post(
-        "https://rentalcar-api.onrender.com/api/user/register",
-        registerData,
-        {
-          headers: {
-            "access-control-allow-origin": [
-              "https://dreams-rent-agency.netlify.app/",
-              "http://localhost:3000",
-            ],
-          },
-        }
-      )
+      .post(`${url}/register`, registerData, {
+        headers: {
+          "access-control-allow-origin":
+            "https://dreams-rent-agency.netlify.app/",
+        },
+      })
       .then((res) => {
         console.log(res);
         setLoading(false);

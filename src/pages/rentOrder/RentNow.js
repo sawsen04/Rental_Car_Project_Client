@@ -10,12 +10,21 @@ function RentNow() {
   let { id } = useParams();
   let token = localStorage.getItem("token");
 
-  const { data } = useFetch(`${url}/singleCar/${id}`, token);
+  const { data } = useFetch(`${url}/singleCar/${id}`, {
+    headers: {
+      token,
+      "access-control-allow-origin": "https://dreams-rent-agency.netlify.app/",
+    },
+  });
   // console.log(data);
   return (
     <div>
       <div data-aos="fade-up" data-aos-duration={1000} className="">
-        {data ? <SingleRent {...data} /> : <DotLoader className="m-auto" color="#f76839" size={70} />}
+        {data ? (
+          <SingleRent {...data} />
+        ) : (
+          <DotLoader className="m-auto" color="#f76839" size={70} />
+        )}
       </div>
     </div>
   );

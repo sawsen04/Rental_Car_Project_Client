@@ -15,7 +15,11 @@ function AdminInfoCard({ fullName, email, imageUrl, createdAt, _id }) {
     setloading(true);
     axios
       .put(`${url}/updateInfo/${_id}`, newAdminInfo, {
-        headers: { token },
+        headers: {
+          token,
+          "access-control-allow-origin":
+            "https://dreams-rent-agency.netlify.app/",
+        },
       })
       .then((res) => {
         setloading(false);
@@ -33,7 +37,11 @@ function AdminInfoCard({ fullName, email, imageUrl, createdAt, _id }) {
     formData.append("photo", newAdminPhoto);
     axios
       .put(`${url}/updateUserPhoto/${_id}`, formData, {
-        headers: { token },
+        headers: {
+          token,
+          "access-control-allow-origin":
+            "https://dreams-rent-agency.netlify.app/",
+        },
       })
       .then((res) => {
         setloading(false);

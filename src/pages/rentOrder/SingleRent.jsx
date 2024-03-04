@@ -47,7 +47,8 @@ function SingleRent({ model, pricePerDay, imageUrl, _id, isAvailable }) {
         .post(`${url}/addOrder/${_id}`, formDataOrder, {
           headers: {
             token,
-            "access-control-allow-origin": "http://localhost:3000",
+            "access-control-allow-origin":
+              "https://dreams-rent-agency.netlify.app/",
           },
         })
         .then((res) => {

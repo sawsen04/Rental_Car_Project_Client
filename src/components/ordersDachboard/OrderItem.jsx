@@ -51,7 +51,11 @@ function OrderItem({
         `${adminUrl}/approveOrder/${_id}/${carId._id}`,
         {},
         {
-          headers: { token },
+          headers: {
+            token,
+            "access-control-allow-origin":
+              "https://dreams-rent-agency.netlify.app/",
+          },
         }
       )
       .then((res) => {
@@ -67,7 +71,11 @@ function OrderItem({
         `${adminUrl}/finishRent/${_id}/${carId._id}`,
         {},
         {
-          headers: { token },
+          headers: {
+            token,
+            "access-control-allow-origin":
+              "https://dreams-rent-agency.netlify.app/",
+          },
         }
       )
       .then((res) => {

@@ -32,7 +32,15 @@ function CardCar({
   const handleUpdateCarInfo = () => {
     setloading(true);
     axios
-      .put(`${adminUrl}/updateCar/${_id}`, newCarInfo, { headers: { token } })
+      .put(`${adminUrl}/updateCar/${_id}`, newCarInfo, {
+        headers: {
+          token,
+          "access-control-allow-origin": [
+            "https://dreams-rent-agency.netlify.app/",
+            "http://localhost:3000",
+          ],
+        },
+      })
       .then((res) => {
         setloading(false);
         setOpenModal(false);
@@ -62,7 +70,13 @@ function CardCar({
       }
       axios
         .put(`${adminUrl}/updatePhotoCar/${_id}`, formData, {
-          headers: { token },
+          headers: {
+            token,
+            "access-control-allow-origin": [
+              "https://dreams-rent-agency.netlify.app/",
+              "http://localhost:3000",
+            ],
+          },
         })
         .then((res) => {
           setloading(false);
@@ -89,7 +103,13 @@ function CardCar({
     setloading(true);
     axios
       .delete(`${adminUrl}/deleteCar/${_id}`, {
-        headers: { token },
+        headers: {
+          token,
+          "access-control-allow-origin": [
+            "https://dreams-rent-agency.netlify.app/",
+            "http://localhost:3000",
+          ],
+        },
       })
       .then((res) => {
         setloading(false);

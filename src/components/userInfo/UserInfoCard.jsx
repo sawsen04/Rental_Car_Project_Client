@@ -16,7 +16,13 @@ function UserInfoCard({ fullName, email, phone, imageUrl, _id }) {
   const handleUpdateUserInfo = () => {
     setloading(true);
     axios
-      .put(`${url}/updateInfo/${_id}`, newUserInfo, { headers: { token } })
+      .put(`${url}/updateInfo/${_id}`, newUserInfo, {
+        headers: {
+          token,
+          "access-control-allow-origin":
+            "https://dreams-rent-agency.netlify.app/",
+        },
+      })
       .then((res) => {
         setloading(false);
         setOpenModal(false);
@@ -33,7 +39,11 @@ function UserInfoCard({ fullName, email, phone, imageUrl, _id }) {
     formData.append("photo", newUserPhoto);
     axios
       .put(`${url}/updateUserPhoto/${_id}`, formData, {
-        headers: { token },
+        headers: {
+          token,
+          "access-control-allow-origin":
+            "https://dreams-rent-agency.netlify.app/",
+        },
       })
       .then((res) => {
         setloading(false);
