@@ -18,7 +18,7 @@ function AdminInfoCard({ fullName, email, imageUrl, createdAt, _id }) {
         headers: {
           token,
           "access-control-allow-origin":
-            "https://dreams-rent-agency.netlify.app/",
+            "https://dreams-rent-agency.netlify.app",
         },
       })
       .then((res) => {
@@ -40,7 +40,7 @@ function AdminInfoCard({ fullName, email, imageUrl, createdAt, _id }) {
         headers: {
           token,
           "access-control-allow-origin":
-            "https://dreams-rent-agency.netlify.app/",
+            "https://dreams-rent-agency.netlify.app",
         },
       })
       .then((res) => {

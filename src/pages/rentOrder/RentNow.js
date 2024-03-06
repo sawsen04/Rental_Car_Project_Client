@@ -13,7 +13,7 @@ function RentNow() {
   const { data } = useFetch(`${url}/singleCar/${id}`, {
     headers: {
       token,
-      "access-control-allow-origin": "https://dreams-rent-agency.netlify.app/",
+      "access-control-allow-origin": "https://dreams-rent-agency.netlify.app",
     },
   });
   // console.log(data);

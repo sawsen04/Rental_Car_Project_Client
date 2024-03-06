@@ -12,13 +12,13 @@ function Profile() {
   const userData = useFetch(`${url}/getUserInfo`, {
     headers: {
       token,
-      "access-control-allow-origin": "https://dreams-rent-agency.netlify.app/",
+      "access-control-allow-origin": "https://dreams-rent-agency.netlify.app",
     },
   });
   const { data } = useFetch(`${url}/ownOrder`, {
     headers: {
       token,
-      "access-control-allow-origin": "https://dreams-rent-agency.netlify.app/",
+      "access-control-allow-origin": "https://dreams-rent-agency.netlify.app",
     },
   });
 

@@ -13,7 +13,7 @@ import { useFetch } from "../../utils/useFetch";
 function SecThree() {
   const { data } = useFetch(`${url}/cars`, {
     headers: {
-      "access-control-allow-origin": "https://dreams-rent-agency.netlify.app/",
+      "access-control-allow-origin": "https://dreams-rent-agency.netlify.app",
     },
   });
   //-------button-filter---------

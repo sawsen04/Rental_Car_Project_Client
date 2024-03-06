@@ -8,7 +8,7 @@ function OrderList() {
   const { data } = useFetch(`${adminUrl}/orders`, {
     headers: {
       token,
-      "access-control-allow-origin": "https://dreams-rent-agency.netlify.app/",
+      "access-control-allow-origin": "https://dreams-rent-agency.netlify.app",
     },
   });
   return (

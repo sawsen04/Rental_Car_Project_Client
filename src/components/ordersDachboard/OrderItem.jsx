@@ -54,7 +54,7 @@ function OrderItem({
           headers: {
             token,
             "access-control-allow-origin":
-              "https://dreams-rent-agency.netlify.app/",
+              "https://dreams-rent-agency.netlify.app",
           },
         }
       )
@@ -74,7 +74,7 @@ function OrderItem({
           headers: {
             token,
             "access-control-allow-origin":
-              "https://dreams-rent-agency.netlify.app/",
+              "https://dreams-rent-agency.netlify.app",
           },
         }
       )

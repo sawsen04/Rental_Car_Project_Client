@@ -31,7 +31,7 @@ function AddProduct() {
         headers: {
           token,
           "access-control-allow-origin":
-            "https://dreams-rent-agency.netlify.app/",
+            "https://dreams-rent-agency.netlify.app",
         },
       })
       .then((res) => {

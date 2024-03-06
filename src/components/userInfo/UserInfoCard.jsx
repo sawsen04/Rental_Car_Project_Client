@@ -20,7 +20,7 @@ function UserInfoCard({ fullName, email, phone, imageUrl, _id }) {
         headers: {
           token,
           "access-control-allow-origin":
-            "https://dreams-rent-agency.netlify.app/",
+            "https://dreams-rent-agency.netlify.app",
         },
       })
       .then((res) => {
@@ -42,7 +42,7 @@ function UserInfoCard({ fullName, email, phone, imageUrl, _id }) {
         headers: {
           token,
           "access-control-allow-origin":
-            "https://dreams-rent-agency.netlify.app/",
+            "https://dreams-rent-agency.netlify.app",
         },
       })
       .then((res) => {

@@ -23,7 +23,7 @@ function Cars() {
   const [max, setMax] = useState(500);
   const { data } = useFetch(`${url}/cars`, {
     headers: {
-      "access-control-allow-origin": "https://dreams-rent-agency.netlify.app/",
+      "access-control-allow-origin": "https://dreams-rent-agency.netlify.app",
     },
   });
   return (
@@ -66,7 +66,11 @@ function Cars() {
                   // .filter((car) => car.isAvailable)
                   .map((car, i) => <CardCar key={i} {...car} />)
               ) : (
-                <DotLoader color="#f76839" size={70} />
+                <DotLoader
+                  color="#f76839"
+                  size={70}
+                  className="flex justify-center items-center"
+                />
               )}
             </div>
           </div>

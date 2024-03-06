@@ -10,7 +10,7 @@ function AdminProfile() {
   const { data } = useFetch(`${url}/getUserInfo`, {
     headers: {
       token,
-      "access-control-allow-origin": "https://dreams-rent-agency.netlify.app/",
+      "access-control-allow-origin": "https://dreams-rent-agency.netlify.app",
     },
   });
   return (

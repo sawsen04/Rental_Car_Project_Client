@@ -8,7 +8,7 @@ function UserList() {
   const { data } = useFetch(`${adminUrl}/users`, {
     headers: {
       token,
-      "access-control-allow-origin": "https://dreams-rent-agency.netlify.app/",
+      "access-control-allow-origin": "https://dreams-rent-agency.netlify.app",
     },
   });
   // const { data } = useFetch(`http://localhost:5000/api/admin/users`, token);

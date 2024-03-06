@@ -15,7 +15,7 @@ function Login() {
       .post("https://rentalcar-api.onrender.com/api/user/login", loginData, {
         headers: {
           "access-control-allow-origin":
-            "https://dreams-rent-agency.netlify.app/",
+            "https://dreams-rent-agency.netlify.app",
         },
       })
       .then((res) => {

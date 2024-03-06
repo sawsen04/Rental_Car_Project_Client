@@ -17,7 +17,7 @@ function Register() {
       .post(`${url}/register`, registerData, {
         headers: {
           "access-control-allow-origin":
-            "https://dreams-rent-agency.netlify.app/",
+            "https://dreams-rent-agency.netlify.app",
         },
       })
       .then((res) => {

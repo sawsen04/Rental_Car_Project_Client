@@ -36,7 +36,7 @@ function CardCar({
         headers: {
           token,
           "access-control-allow-origin": [
-            "https://dreams-rent-agency.netlify.app/",
+            "https://dreams-rent-agency.netlify.app",
             "http://localhost:3000",
           ],
         },
@@ -73,7 +73,7 @@ function CardCar({
           headers: {
             token,
             "access-control-allow-origin": [
-              "https://dreams-rent-agency.netlify.app/",
+              "https://dreams-rent-agency.netlify.app",
               "http://localhost:3000",
             ],
           },
@@ -106,7 +106,7 @@ function CardCar({
         headers: {
           token,
           "access-control-allow-origin": [
-            "https://dreams-rent-agency.netlify.app/",
+            "https://dreams-rent-agency.netlify.app",
             "http://localhost:3000",
           ],
         },

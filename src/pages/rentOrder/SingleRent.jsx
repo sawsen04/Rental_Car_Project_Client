@@ -48,7 +48,7 @@ function SingleRent({ model, pricePerDay, imageUrl, _id, isAvailable }) {
           headers: {
             token,
             "access-control-allow-origin":
-              "https://dreams-rent-agency.netlify.app/",
+              "https://dreams-rent-agency.netlify.app",
           },
         })
         .then((res) => {
