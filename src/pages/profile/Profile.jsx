@@ -9,18 +9,8 @@ import UserInfoCard from "../../components/userInfo/UserInfoCard";
 
 function Profile() {
   const token = localStorage.getItem("token");
-  const userData = useFetch(`${url}/getUserInfo`, {
-    headers: {
-      token,
-      "access-control-allow-origin": "https://dreams-rent-agency.netlify.app",
-    },
-  });
-  const { data } = useFetch(`${url}/ownOrder`, {
-    headers: {
-      token,
-      "access-control-allow-origin": "https://dreams-rent-agency.netlify.app",
-    },
-  });
+  const userData = useFetch(`${url}/getUserInfo`, token);
+  const { data } = useFetch(`${url}/ownOrder`, token);
 
   // console.log(userData?.data);
   return (

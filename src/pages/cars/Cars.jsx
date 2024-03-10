@@ -21,11 +21,7 @@ function Cars() {
   const [brand, setBrand] = useState([]);
   const [min, setMin] = useState(100);
   const [max, setMax] = useState(500);
-  const { data } = useFetch(`${url}/cars`, {
-    headers: {
-      "access-control-allow-origin": "https://dreams-rent-agency.netlify.app",
-    },
-  });
+  const { data } = useFetch(`${url}/cars`);
   return (
     <div className="bg-white dark:bg-dark dark:text-white">
       <div className="bg-img flex justify-center items-center">

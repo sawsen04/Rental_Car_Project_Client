@@ -5,12 +5,7 @@ import { adminUrl } from "../../utils/url";
 import OrderItem from "./OrderItem";
 function OrderList() {
   let token = localStorage.getItem("token");
-  const { data } = useFetch(`${adminUrl}/orders`, {
-    headers: {
-      token,
-      "access-control-allow-origin": "https://dreams-rent-agency.netlify.app",
-    },
-  });
+  const { data } = useFetch(`${adminUrl}/orders`, token);
   return (
     <div>
       {data ? (

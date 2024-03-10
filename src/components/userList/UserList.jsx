@@ -5,12 +5,7 @@ import { adminUrl } from "../../utils/url";
 import UserItem from "./UserItem";
 function UserList() {
   let token = localStorage.getItem("token");
-  const { data } = useFetch(`${adminUrl}/users`, {
-    headers: {
-      token,
-      "access-control-allow-origin": "https://dreams-rent-agency.netlify.app",
-    },
-  });
+  const { data } = useFetch(`${adminUrl}/users`, token);
   // const { data } = useFetch(`http://localhost:5000/api/admin/users`, token);
   return (
     <div className="w-[100%] py-6  md:flex justify-center gap-6 flex-wrap ">

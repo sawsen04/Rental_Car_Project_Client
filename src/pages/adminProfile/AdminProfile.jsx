@@ -7,12 +7,7 @@ import SideBar from "../adminDashboard/SideBar";
 
 function AdminProfile() {
   const token = localStorage.getItem("token");
-  const { data } = useFetch(`${url}/getUserInfo`, {
-    headers: {
-      token,
-      "access-control-allow-origin": "https://dreams-rent-agency.netlify.app",
-    },
-  });
+  const { data } = useFetch(`${url}/getUserInfo`, token);
   return (
     <div className=" md:flex ">
       <SideBar />
