@@ -18,20 +18,21 @@ function AppSec() {
         style={bannerImg}
       >
         <div>
-          <div className="space-y-6 max-w-xl mx-auto">
+          <div className="space-y-6 md:max-w-xl max-w-sm md:mx-auto">
             <h1
               data-aos="fade-up"
-              className="text-2xl text-center sm:text-4xl font-semibold"
+              className="md:text-2xl text-xl text-center sm:text-4xl font-semibold"
             >
               Get Started with our app
             </h1>
-            <p data-aos="fade-up" className="text-cebter sm:px-20">
+            <p data-aos="fade-up" className="text-center sm:px-20">
               Lorem ipsum dolor sit amet consectetur adipisicing elit.
               Aspernatur, Lorem ipsum dolor sit.
             </p>
-            <div 
-            data-aos="fade-up"
-            className="flex flex-wrap justify-center items-center gap-4">
+            <div
+              data-aos="fade-up"
+              className="md:flex md:flex-wrap justify-center items-center gap-4"
+            >
               <a href="#/">
                 <img
                   src={PlayStore}

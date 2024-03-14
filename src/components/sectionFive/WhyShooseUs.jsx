@@ -37,22 +37,22 @@ function WhyShooseUs() {
   return (
     <div className="pb-[15%] px-20 py-20 dark:bg-black dark:text-white sm:min-h[600px]">
       <div className="container">
-        <div className="pb-12 flex flex-col items-center gap-4">
-          <h1 className="text-3xl font-extrabold text-center sm:text-4xl">
+        <div className="pb-12 md:flex md:flex-col items-center gap-4">
+          <h1 className="md:text-3xl text-xl font-extrabold text-center sm:text-4xl">
             Why Choose Us
           </h1>
-          <div className="flex flex-col items-center">
+          <div className="md:flex md:flex-col items-center">
             <p>Lorem Ipsum has been the industry's standard dummy text</p>
             <p>ever since the 1500s,</p>
           </div>
         </div>
-        <div className="flex gap-10">
+        <div className="md:flex gap-10">
           {Data.map((step) => (
             <div
               key={step.name}
               data-aos="fade-up"
               data-aos-delay={step.aosDelay}
-              className="card w-[400px] flex flex-col justify-center items-center text-center group space-y-3 sm:space-y-6 p-4 sm:py-16 bg-dark hover:bg-primary duration-300 text-white hover:text-black rounded-lg"
+              className="card md:w-[400px] md:flex md:flex-col justify-center items-center text-center group space-y-3 sm:space-y-6 p-4 sm:py-16 bg-dark hover:bg-primary duration-300 text-white hover:text-black rounded-lg"
             >
               <div className="">{step.icon}</div>
               <h2 className="font-bold">{step.name}</h2>

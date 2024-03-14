@@ -8,6 +8,7 @@ import { MdCarRental } from "react-icons/md";
 import { Button, Modal } from "flowbite-react";
 import { Label, TextInput, FileInput } from "flowbite-react";
 import axios from "axios";
+import Swal from "sweetalert2";
 import { adminUrl } from "../../utils/url";
 // import { toast, ToastContainer } from "react-toastify";
 function CardCar({
@@ -45,6 +46,13 @@ function CardCar({
         setloading(false);
         setOpenModal(false);
         console.log(res);
+        Swal.fire({
+          position: "center",
+          icon: "success",
+          title: "the car info was updated successfully",
+          showConfirmButton: false,
+          timer: 1500,
+        });
         // toast.success("Car was updated successfully", {
         //   position: "bottom-right",
         //   autoClose: 5000,
@@ -82,6 +90,13 @@ function CardCar({
           setloading(false);
           setOpenModalPhoto(false);
           console.log(res);
+          Swal.fire({
+            position: "center",
+            icon: "success",
+            title: "the photos were updated successfully",
+            showConfirmButton: false,
+            timer: 1500,
+          });
           // toast.success("Car was updated successfully", {
           //   position: "bottom-right",
           //   autoClose: 5000,
@@ -115,6 +130,13 @@ function CardCar({
         setloading(false);
         navigate("/cars");
         console.log(res);
+        Swal.fire({
+          position: "center",
+          icon: "success",
+          title: "the car was deleted",
+          showConfirmButton: false,
+          timer: 1500,
+        });
         // toast.success("Car was deleted successfully", {
         //   position: "bottom-right",
         //   autoClose: 5000,

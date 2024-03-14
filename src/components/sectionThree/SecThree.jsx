@@ -24,21 +24,21 @@ function SecThree() {
   return (
     <div className="pb-24 pt-12 bg-white dark:bg-dark dark:text-white">
       <div className="container">
-        <div className="flex flex-col justify-center items-center">
+        <div className="md:flex md:flex-col justify-center items-center">
           <h1
             data-aos="fade-up"
-            className="text-3xl sm:text-4xl font-semibold mb-3"
+            className="md:text-3xl text-xl sm:text-4xl font-semibold mb-3"
           >
             Explore Most Popular Cars
           </h1>
-          <p data-aos="fade-up" className="text-sm">
+          <p data-aos="fade-up" className="md:text-sm text-xs">
             Lorem Ipsum has been the industry's standard dummy text
           </p>
-          <p data-aos="fade-up" className="text-sm pb-10">
+          <p data-aos="fade-up" className="md:text-sm text-xs pb-10">
             ever since the 1500s,
           </p>
         </div>
-        <div data-aos="fade-up" className="flex justify-center gap-10 m-10 ">
+        <div data-aos="fade-up" className="md:flex justify-center gap-10 m-10 ">
           <Button
             title={"All"}
             backgroundColor={"white"}
@@ -135,7 +135,7 @@ function SecThree() {
           <div
             data-aos="fade-up"
             data-aos-duration={1000}
-            className=" flex justify-center flex-wrap  gap-x-20 gap-y-10"
+            className=" md:flex justify-center md:flex-wrap  gap-x-20 gap-y-10"
           >
             {data ? (
               data

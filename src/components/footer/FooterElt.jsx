@@ -2,7 +2,7 @@ import React from 'react'
 import { TfiLineDouble } from "react-icons/tfi";
 function FooterElt(props) {
   return (
-    <div className="flex flex-col gap-4  cursor-pointer ">
+    <div className="md:flex md:flex-col gap-4  cursor-pointer ">
       <h1 className="font-bold text-white hover:text-primary">
         {props.title}
       </h1>

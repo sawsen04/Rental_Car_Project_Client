@@ -4,7 +4,9 @@ import SideBar from "../adminDashboard/SideBar";
 import { adminUrl } from "../../utils/url";
 import axios from "axios";
 import { FileInput, Label, Card, TextInput, Button } from "flowbite-react";
-import { toast, ToastContainer } from "react-toastify";
+// import { toast, ToastContainer } from "react-toastify";
+// import "react-toastify/dist/ReactToastify.css";
+import Swal from "sweetalert2";
 function AddProduct() {
   let token = localStorage.getItem("token");
   const navigate = useNavigate();
@@ -46,16 +48,23 @@ function AddProduct() {
           fuel: "",
           pricePerDay: "",
         });
-        toast.success("Car was added successfully", {
-          position: "bottom-right",
-          autoClose: 5000,
-          hideProgressBar: false,
-          closeOnClick: true,
-          pauseOnHover: true,
-          draggable: true,
-          progress: undefined,
-          theme: "colored",
-        });
+    Swal.fire({
+      position: "center",
+      icon: "success",
+      title: "The car was added successfully",
+      showConfirmButton: false,
+      timer: 1500,
+    });
+        // toast.success("Car was added successfully", {
+        //   position: "bottom-right",
+        //   autoClose: 5000,
+        //   hideProgressBar: false,
+        //   closeOnClick: true,
+        //   pauseOnHover: true,
+        //   draggable: true,
+        //   progress: undefined,
+        //   theme: "colored",
+        // });
       })
       .catch((err) => {
         setLoading(false);
@@ -201,7 +210,7 @@ function AddProduct() {
           </Button>
         </div>
       </Card>
-      <ToastContainer
+      {/* <ToastContainer
         position="bottom-right"
         autoClose={5000}
         hideProgressBar={false}
@@ -212,7 +221,7 @@ function AddProduct() {
         draggable
         pauseOnHover
         theme="colored"
-      />
+      /> */}
     </div>
   );
 }

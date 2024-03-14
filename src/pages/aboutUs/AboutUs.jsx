@@ -7,7 +7,7 @@ function AboutUs() {
     <div
       data-aos="fade-up"
       data-aos-duration="1000"
-      className="bg-white dark:bg-dark dark:text-white border-2 border-[red]"
+      className="bg-white dark:bg-dark dark:text-white  pb-16"
     >
       <div className="md:flex justify-center gap-[30%] p-8 pt-[50px] pb-10">
         <div className="md:flex pt-10">

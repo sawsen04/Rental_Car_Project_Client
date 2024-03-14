@@ -5,6 +5,8 @@ import { adminUrl } from "../../utils/url";
 import axios from "axios";
 import { Button, Modal } from "flowbite-react";
 import "photoswipe/style.css";
+import Swal from "sweetalert2";
+
 import "./style.css";
 function OrderItem({
   _id,
@@ -61,6 +63,13 @@ function OrderItem({
       .then((res) => {
         console.log(res);
         setLoading(false);
+        Swal.fire({
+          position: "center",
+          icon: "success",
+          title: "The order is paid",
+          showConfirmButton: false,
+          timer: 1800,
+        });
       })
       .catch((err) => console.log(err));
   };
@@ -81,6 +90,13 @@ function OrderItem({
       .then((res) => {
         console.log(res);
         setLoading(false);
+        Swal.fire({
+          position: "center",
+          icon: "success",
+          title: "The rent is finished",
+          showConfirmButton: false,
+          timer: 1800,
+        });
       })
       .catch((err) => console.log(err));
   };

@@ -22,7 +22,7 @@ const zoomOutProperties = {
 
 const Slideshow = () => {
   return (
-    <div data-aos="fade-up" className="slide-container w-[50%] m-auto ">
+    <div data-aos="fade-up" className="slide-container md:w-[50%] m-auto ">
       <Zoom {...zoomOutProperties}>
         {images.map((each, index) => (
           <img
@@ -41,24 +41,24 @@ function SecFoor() {
  // const navigate = useNavigate();
   return (
     <div className="pb-24 pt-12 dark:bg-dark bg-slate-100 dark:text-white">
-      <div className="flex flex-col justify-center items-center">
+      <div className="md:flex md:flex-col justify-center items-center">
         <h1
           data-aos="fade-up"
-          className="text-3xl sm:text-4xl font-semibold mb-3"
+          className="md:text-3xl text-xl sm:text-4xl font-semibold mb-3"
         >
           Explore Most Popular Cartypes
         </h1>
-        <p data-aos="fade-up" className="text-sm">
+        <p data-aos="fade-up" className="mmd:text-sm text-xs">
           Lorem Ipsum has been the industry's standard dummy text
         </p>
-        <p data-aos="fade-up" className="text-sm pb-10">
+        <p data-aos="fade-up" className="md:text-sm text-xs pb-10">
           ever since the 1500s,
         </p>
       </div>
       <div className="slides">
         <Slideshow />
       </div>
-      <div className="flex justify-center items-center w-[100%] mt-20">
+      <div className="md:flex justify-center items-center md:w-[100%] mt-20">
         <NavLink
           data-aos="fade-up"
           className="font-semibold rounded-lg "

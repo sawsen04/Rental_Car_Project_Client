@@ -3,19 +3,19 @@ import React from "react";
 function SideBarCars({ min, max, setMin, setMax, setGear, brand, setBrand }) {
   // console.log("brand:", brand);
   return (
-    <div className="sticky top-[110px] bg-white dark:bg-dark dark:text-white h-[83vh] rounded-xl drop-shadow-[4px_4px_8px_rgba(0,0,2,2.60)]">
-      <div className="sticky top-[110px]  h-[83vh] w-[250px] p-3 rounded-xl drop-shadow-[1px_1px_1px_orange] ">
+    <div className="md:sticky top-[110px] bg-white dark:bg-dark dark:text-white md:h-[83vh] rounded-xl drop-shadow-[4px_4px_8px_rgba(0,0,2,2.60)]">
+      <div className="md:sticky top-[110px]  md:h-[83vh] md:w-[250px] p-3 rounded-xl drop-shadow-[1px_1px_1px_orange] ">
         <div>
-          <div className="filter divide-y-4 divide-slate-400/25 flex flex-col gap-6">
+          <div className="filter divide-y-4 divide-slate-400/25 md:flex flex-col gap-6">
             <div className="Car-category pt-3">
-              <div className=" flex justify-between items-center text-sm font-semibold pb-2">
-                <h1 className="font-bold text-[18px] underline decoration-primary">
+              <div className=" md:flex justify-between items-center md:text-sm text-xs md:font-semibold font-normal pb-2">
+                <h1 className="md:font-bold font-normal md:text-[18px] text-[15px] underline decoration-primary">
                   Car Brand
                 </h1>
               </div>
               <div>
                 <ul className="flex flex-col gap-2 ">
-                  <li className="flex gap-2 font-medium ">
+                  <li className="md:flex gap-2 md:font-medium font-normal ">
                     <input
                       className="rounded-sm"
                       type="checkbox"
@@ -28,7 +28,7 @@ function SideBarCars({ min, max, setMin, setMax, setGear, brand, setBrand }) {
                     />
                     All
                   </li>
-                  <li className="flex gap-2 font-medium">
+                  <li className="md:flex gap-2 font-medium">
                     <input
                       className="rounded-sm"
                       type="checkbox"
@@ -45,7 +45,7 @@ function SideBarCars({ min, max, setMin, setMax, setGear, brand, setBrand }) {
                     />
                     Toyota
                   </li>
-                  <li className="flex gap-2 font-medium">
+                  <li className="md:flex gap-2 md:font-medium font-normal">
                     <input
                       className="rounded-sm"
                       type="checkbox"
@@ -62,7 +62,7 @@ function SideBarCars({ min, max, setMin, setMax, setGear, brand, setBrand }) {
                     />
                     Kia
                   </li>
-                  <li className="flex gap-2 font-medium">
+                  <li className="md:flex gap-2 md:font-medium font-normal">
                     <input
                       className="rounded-sm"
                       type="checkbox"
@@ -79,7 +79,7 @@ function SideBarCars({ min, max, setMin, setMax, setGear, brand, setBrand }) {
                     />
                     Volkswagen
                   </li>
-                  <li className="flex gap-2 font-medium">
+                  <li className="md:flex gap-2 md:font-medium font-normal">
                     <input
                       className="rounded-sm"
                       type="checkbox"
@@ -96,7 +96,7 @@ function SideBarCars({ min, max, setMin, setMax, setGear, brand, setBrand }) {
                     />
                     Chevrolet
                   </li>
-                  <li className="flex gap-2 font-medium">
+                  <li className="md:flex gap-2 md:font-medium font-normal">
                     <input
                       className="rounded-sm"
                       type="checkbox"
@@ -117,14 +117,14 @@ function SideBarCars({ min, max, setMin, setMax, setGear, brand, setBrand }) {
               </div>
             </div>
             <div className="Car-gearbox pt-3">
-              <div className="flex justify-between items-center text-sm font-semibold pb-2">
-                <h1 className="font-bold text-[18px] underline decoration-primary">
+              <div className="md:flex justify-between items-center md:text-sm text-xs md:font-semibold font-medium pb-2">
+                <h1 className="md:font-bold font-medium md:text-[18px] text-[15px] underline decoration-primary">
                   Gear Box
                 </h1>
               </div>
               <div>
-                <ul className="flex flex-col gap-2 ">
-                  <li className="flex gap-2 font-medium">
+                <ul className="md:flex flex-col gap-2 ">
+                  <li className="md:flex gap-2 md:font-medium font-normal">
                     <input
                       type="radio"
                       name="gear-type"
@@ -135,7 +135,7 @@ function SideBarCars({ min, max, setMin, setMax, setGear, brand, setBrand }) {
                     />
                     All
                   </li>
-                  <li className="flex gap-2 font-medium">
+                  <li className="md:flex gap-2 md:font-medium font-normal">
                     <input
                       type="radio"
                       name="gear-type"
@@ -146,7 +146,7 @@ function SideBarCars({ min, max, setMin, setMax, setGear, brand, setBrand }) {
                     />
                     Auto
                   </li>
-                  <li className="flex gap-2 font-medium">
+                  <li className="md:flex gap-2 md:font-medium font-normal">
                     <input
                       type="radio"
                       name="gear-type"
@@ -161,17 +161,19 @@ function SideBarCars({ min, max, setMin, setMax, setGear, brand, setBrand }) {
               </div>
             </div>
             <div className="Price pt-3">
-              <div className=" flex justify-between items-center text-sm font-semibold pb-2">
+              <div className=" md:flex justify-between items-center md:text-sm text-sx md:font-semibold font-normal pb-2">
                 <h1 className="font-bold text-[18px] underline decoration-primary">
                   price
                 </h1>
               </div>
               <div>
-                <ul className="flex flex-col  gap-2 ">
+                <ul className="md:flex flex-col  gap-2 ">
                   <li className="flex gap-4 items-center">
-                    <label className="text font-medium ">Min</label>
+                    <label className="text md:font-medium font-normal ">
+                      Min
+                    </label>
                     <input
-                      className="w-[50%] border-x-2  border-y-4 rounded-lg border-x-blue-300 border-yellow-400 bg-white dark:bg-dark dark:text-white"
+                      className="md:w-[50%] w-[40%] border-x-2  border-y-4 rounded-lg border-x-blue-300 border-yellow-400 bg-white dark:bg-dark dark:text-white"
                       type="number"
                       min={100}
                       defaultValue={min}
@@ -181,9 +183,11 @@ function SideBarCars({ min, max, setMin, setMax, setGear, brand, setBrand }) {
                     />
                   </li>
                   <li className="flex gap-4 items-center">
-                    <label className="text-black font-medium">Max</label>
+                    <label className="text-black md:font-medium font-normal ">
+                      Max
+                    </label>
                     <input
-                      className="w-[50%] border-x-2  border-y-4 rounded-lg border-x-blue-300 border-yellow-400 bg-white dark:bg-dark dark:text-white"
+                      className="md:w-[50%] w-[40%] border-x-2  border-y-4 rounded-lg border-x-blue-300 border-yellow-400 bg-white dark:bg-dark dark:text-white"
                       type="number"
                       max={500}
                       min={min}
@@ -196,47 +200,8 @@ function SideBarCars({ min, max, setMin, setMax, setGear, brand, setBrand }) {
                 </ul>
               </div>
             </div>
-            {/* price */}
-            {/* <div className="Price pt-3">
-                <div className="flex justify-between items-center text-sm font-semibold">
-                  <h1 className="font-bold text-[18px]">Price</h1>
-                  <MdOutlineKeyboardArrowDown size={30} />
-                </div>
-                <div>
-                  <div className="card flex justify-content-center">
-                    <div className="w-14rem ">
-                      <InputText
-                        value={value}
-                        onChange={(e) => setValue(e.target.value)}
-                        className="w-full"
-                      />
-                      <Slider
-                        value={value}
-                        onChange={(e) => setValue(e.value)}
-                        className="w-full"
-                      />
-                    </div>
-                  </div>
-                </div>
-              </div> */}
           </div>
         </div>
-        {/* bouton side bar */}
-        {/* <div className="my-10 flex flex-col items-center gap-4">
-            <Button
-              icon={<TbFilter size={20} fontWeight={600} />}
-              title={"Filtrer results"}
-              backgroundColor={"orange"}
-              color={"white"}
-              border={"none"}
-            />
-            <Button
-              title={"Reset filter"}
-              backgroundColor={"orange"}
-              color={"white"}
-              border={"none"}
-            />
-          </div> */}
       </div>
     </div>
   );

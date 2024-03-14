@@ -13,7 +13,7 @@ function Footer() {
       <div
         data-aos="fade-up"
         data-aos-duration="1000"
-        className="md:flex gap-[10%] pt-9 pb-[15px]  px-10"
+        className="md:flex md:gap-[10%] md:pt-9 md:pb-[15px]  md:px-10"
       >
         <FooterElt
           title={"About Company"}
@@ -39,22 +39,22 @@ function Footer() {
           foor={"Deals and Incentive"}
           five={"Financial Services"}
         />
-        <div className="flex flex-col gap-4  cursor-pointer ">
+        <div className="md:flex flex-col md:gap-4  cursor-pointer ">
           <h1 className="font-bold text-white hover:text-primary">
             Contact Info
           </h1>
           <TfiLineDouble color="orange" fontSize={25} />
-          <div className="flex gap-3  hover:text-primary">
+          <div className="md:flex gap-3  hover:text-primary">
             <MdPhoneInTalk color="white" size={20} />
             <h1 className="text-white font-bold">(+216) 00 000 000</h1>
           </div>
-          <div className="flex gap-3">
+          <div className="md:flex gap-3">
             <SiGmail color="white" size={20} />
             <h1 className="text-white font-bold">support@example.com</h1>
           </div>
           <div className="mt-9">
             <h1 className="text-white font-bold">Connect with us</h1>
-            <div className="flex gap-5 mt-3">
+            <div className="md:flex gap-5 mt-3">
               <FaFacebook color="white" size={20} />
               <GrInstagram color="white" size={20} />
               <TiSocialLinkedinCircular color="white" size={26} />

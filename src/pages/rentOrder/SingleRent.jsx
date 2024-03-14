@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Swal from "sweetalert2";
 //import DatePicker from "react-datepicker";
 import { Alert } from "flowbite-react";
 import "react-datepicker/dist/react-datepicker.css";
@@ -31,6 +32,7 @@ function SingleRent({ model, pricePerDay, imageUrl, _id, isAvailable }) {
   // console.log(licencePhoto);
   const navigate = useNavigate();
   // const [amount, setAmount] = useState(0);
+
   const handleSendOrder = () => {
     setLoading(true);
     let formDataOrder = new FormData();
@@ -42,6 +44,7 @@ function SingleRent({ model, pricePerDay, imageUrl, _id, isAvailable }) {
       "ammount",
       Math.abs((dayReturn - dayPick) * pricePerDay)
     );
+
     if (startDatePickup && startDateReturn && licencePhoto.length > 0) {
       axios
         .post(`${url}/addOrder/${_id}`, formDataOrder, {
@@ -53,9 +56,17 @@ function SingleRent({ model, pricePerDay, imageUrl, _id, isAvailable }) {
         })
         .then((res) => {
           setLoading(false);
-          console.log(res);
+          // console.log(res);
+          Swal.fire({
+            position: "center",
+            icon: "success",
+            title: "Your order has been saved",
+            showConfirmButton: false,
+            timer: 1800,
+          });
           navigate("/profile");
         })
+
         .catch((err) => {
           setLoading(false);
           console.dir(err);
@@ -65,8 +76,8 @@ function SingleRent({ model, pricePerDay, imageUrl, _id, isAvailable }) {
       setFieldsErr(
         <Alert color="warning" withBorderAccent>
           <span>
-            <span className="font-medium">Info alert!</span> Empty fields are
-            not allowed!
+            <span className="md:font-medium font-normal">Info alert!</span>{" "}
+            Empty fields are not allowed!
           </span>
         </Alert>
       );
@@ -77,24 +88,26 @@ function SingleRent({ model, pricePerDay, imageUrl, _id, isAvailable }) {
   };
   return (
     <div className="">
-      <div className="bg-img flex justify-center items-center">
-        <h1 className="text-white font-extrabold text-[35px]">{model}</h1>
+      <div className="bg-img md:flex justify-center items-center">
+        <h1 className="text-white md:font-extrabold font-semibold md:text-[35px] text-[25px]">
+          {model}
+        </h1>
       </div>
       {/* <div className="car-details pl-[100px] py-[30px] mt-5 mb-6">
         <h1 className="font-bold text-[25px]">{model}</h1>
         <p className="font-normal text-[10px]">{pricePerDay}Dt</p>
       </div> */}
-      <div className="container flex justify-center py-[30px] bg-white dark:bg-dark dark:text-white">
+      <div className="container md:flex justify-center md:py-[30px] bg-white dark:bg-dark dark:text-white">
         <div className="car-container">
           <div>
             <Thumbnails images={imageUrl} />
           </div>
         </div>
         <div className="rent-container shadow-xl shadow-slate-600 rounded-lg py-3">
-          <div className="flex flex-col gap-2 p-4">
+          <div className="fmd:lex flex-col gap-2 p-4">
             <div>
               <Label
-                className="font-bold"
+                className="md:font-bold font-medium"
                 htmlFor="multiple-file-upload"
                 value="Upload Your Driving License Photos"
               />
@@ -108,19 +121,8 @@ function SingleRent({ model, pricePerDay, imageUrl, _id, isAvailable }) {
               multiple
             />
           </div>
-          {/* <div className="licence-photos">
-            <label for="files">driving License photos:</label>
-            <input
-              type="file"
-              name="photos"
-              multiple={true}
-              onChange={(e) => {
-                setLicencePhoto(e.target.files);
-              }}
-            />
-          </div> */}
-          <div className="pickUp-and-return-date flex flex-col gap-2 p-6">
-            <div className="pickup flex flex-col gap-3 font-semibold">
+          <div className="pickUp-and-return-date md:flex flex-col gap-2 p-6">
+            <div className="pickup md:flex flex-col gap-3 md:font-semibold font-normal">
               <label>Pickup Date</label>
               <input
                 type="date"
@@ -155,7 +157,7 @@ function SingleRent({ model, pricePerDay, imageUrl, _id, isAvailable }) {
                 }}
               />
             </div>
-            <div className=" return flex flex-col gap-3 font-semibold">
+            <div className=" return md:flex flex-col gap-3 md:font-semibold font-normal">
               <label>Return Date</label>
               <input
                 type="date"
@@ -200,8 +202,10 @@ function SingleRent({ model, pricePerDay, imageUrl, _id, isAvailable }) {
                 {dateERR && (
                   <Alert color="warning" withBorderAccent>
                     <span>
-                      <span className="font-medium">Info alert!</span> Cannot
-                      choose past date!
+                      <span className="md:font-medium font-normal">
+                        Info alert!
+                      </span>{" "}
+                      Cannot choose past date!
                     </span>
                   </Alert>
                 )}
@@ -224,7 +228,7 @@ function SingleRent({ model, pricePerDay, imageUrl, _id, isAvailable }) {
             </button>
           </div>
           {isAvailable && (
-            <div className="flex justify-center">
+            <div className="md:flex justify-center">
               <Button
                 title={loading ? <BeatLoader size="10" /> : "Rent Now"}
                 backgroundColor={"rgb(255, 199, 39)"}

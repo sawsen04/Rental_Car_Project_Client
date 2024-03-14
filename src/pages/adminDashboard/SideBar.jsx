@@ -7,8 +7,8 @@ import { CgProfile } from "react-icons/cg";
 function SideBar() {
   return (
     <div>
-      <Sidebar className="h-[95vh] " aria-label="Default sidebar example">
-        <Sidebar.Items className="pt-[75%] ">
+      <Sidebar className="md:h-100%  " aria-label="Default sidebar example">
+        <Sidebar.Items className=" pb-[50%] pt-[50%]">
           <Sidebar.ItemGroup className="flex flex-col gap-2">
             <Link to="/adminProfile">
               <Sidebar.Item icon={CgProfile}>Admin Profile</Sidebar.Item>

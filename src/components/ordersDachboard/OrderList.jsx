@@ -7,11 +7,11 @@ function OrderList() {
   let token = localStorage.getItem("token");
   const { data } = useFetch(`${adminUrl}/orders`, token);
   return (
-    <div>
+    <div className="w-[100%] py-6  md:flex justify-center gap-6 flex-wrap ">
       {data ? (
         data.map((order, i) => <OrderItem key={i} {...order} />)
       ) : (
-        <DotLoader className="m-auto" color="#f76839" size={70} />
+        <DotLoader className="flex m-auto" color="#f76839" size={70} />
       )}
     </div>
   );

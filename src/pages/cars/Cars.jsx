@@ -25,12 +25,14 @@ function Cars() {
   return (
     <div className="bg-white dark:bg-dark dark:text-white">
       <div className="bg-img flex justify-center items-center">
-        <h1 className="text-white font-extrabold text-[35px]">Car Listings</h1>
+        <h1 className="text-white font-extrabold md:text-[35px] text-[25px]">
+          Car Listings
+        </h1>
       </div>
       <div
         data-aos="fade-up"
         data-aos-duration={1000}
-        className=" flex justify-center  gap-10 min-h-[200vh] py-[6%]  "
+        className=" md:flex justify-center  gap-10 md:min-h-[200vh] py-[6%]  "
       >
         <SideBarCars
           setGear={setGear}
@@ -43,7 +45,7 @@ function Cars() {
           setMax={setMax}
         />
         {/*car listing*/}
-        <div className="cars-list  w-[70%] ">
+        <div className="cars-list  md:w-[70%] ">
           <div className="">
             <div
               data-aos="fade-up"
@@ -65,7 +67,7 @@ function Cars() {
                 <DotLoader
                   color="#f76839"
                   size={70}
-                  className="flex justify-center items-center"
+                  className="md:flex justify-center items-center"
                 />
               )}
             </div>

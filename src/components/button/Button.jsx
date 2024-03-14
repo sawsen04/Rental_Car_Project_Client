@@ -6,7 +6,7 @@ function Button(props) {
     <div>
       <button
         type="button"
-        className="Button"
+        className="Button "
         style={{
           border: props.border,
           backgroundColor: props.backgroundColor,
