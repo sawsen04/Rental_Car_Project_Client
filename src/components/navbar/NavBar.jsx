@@ -26,9 +26,9 @@ function NavBar({ theme, setTheme }) {
           />
         </div>
       </NavLink>
-      <div className="md:flex hidden justify-between items-center  w-[30%]">
-        <ul className="flex justify-between w-[85%] ">
-          <li className="font-bold hover:border-b-2 hover:text-primary hover:border-primary transition-colors duration-500">
+      <div className="md:flex hidden justify-between items-center  w-[30%] ">
+        <ul className="flex  justify-between w-[85%]  ">
+          <li className="font-bold  hover:border-b-2 hover:text-primary hover:border-primary transition-colors duration-500">
             <NavLink to="/">Home</NavLink>
           </li>
           <li className="font-bold hover:border-b-2 hover:text-primary  hover:border-primary transition-colors duration-500">
@@ -68,7 +68,7 @@ function NavBar({ theme, setTheme }) {
         </div>
       </div>
 
-      <div className="md:flex hidden justify-between  w-[28%] ">
+      <div className="md:flex hidden justify-between  w-[28%]  ">
         {token && isUser ? (
           <>
             <NavLink to="/profile">
@@ -147,8 +147,8 @@ function NavBar({ theme, setTheme }) {
       {showMobileNav && (
         <MobileNav>
           <>
-            <div className="flex flex-col justify-between items-center w-[30%]">
-              <ul className="flex flex-col justify-between w-[85%] ">
+            <div className="flex flex-col justify-between items-center w-[100%]">
+              <ul className="flex flex-col items-center gap-4  w-[90%] ">
                 <li className="font-bold hover:border-b-2 hover:text-primary hover:border-primary transition-colors duration-500">
                   <NavLink to="/">Home</NavLink>
                 </li>
@@ -188,7 +188,7 @@ function NavBar({ theme, setTheme }) {
                 )}
               </div>
             </div>
-            <div className="flex flex-col justify-between  w-[28%] ">
+            <div className="flex flex-col items-center gap-3  w-[100%] ">
               {token && isUser ? (
                 <>
                   <NavLink to="/profile">

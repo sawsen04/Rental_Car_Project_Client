@@ -33,12 +33,12 @@ function HowItWorks() {
   return (
     <div className="  md:px-20 px-10 md:py-20 py-10 dark:bg-black dark:text-white sm:min-h[600px]">
       <div className="container">
-        <div className="pb-12">
+        <div className="md:pb-12 pb-4">
           <h1 className="md:text-3xl text-xl font-extrabold text-center sm:text-4xl">
             How It Works
           </h1>
         </div>
-        <div className="md:flex md:gap-10 ">
+        <div className="md:flex md:gap-10 gap-4 ">
           {Data.map((step) => (
             <div
               key={step.name}

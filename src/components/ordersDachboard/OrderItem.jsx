@@ -107,7 +107,7 @@ function OrderItem({
         <Modal.Body>
           <div className="overflow-x-auto">
             <Table hoverable>
-              <Table.Body className="divide-y">
+              <Table.Body className="divide-y ">
                 <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
                   <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
                     CarId

@@ -19,9 +19,17 @@ function SingleRent({ model, pricePerDay, imageUrl, _id, isAvailable }) {
   const token = localStorage.getItem("token");
   const [startDatePickup, setStartDatePickup] = useState();
   const [startDateReturn, setStartDateReturn] = useState();
+  const dateP = new Date(startDatePickup);
+  const dateR = new Date(startDateReturn);
+  const differenceInMill = Math.abs(dateR - dateP);
+  const differenceInDays = differenceInMill / (1000 * 3600 * 24);
+  // console.log(differenceInDays);
   const [dayPick, setDayPick] = useState();
   const [dayReturn, setDayReturn] = useState();
+
   const [pickUpMonth, setPickUpMonth] = useState();
+  const [pickUpYear, setPickUpYear] = useState();
+  // const [pickUpYear, setpickUpYear] = useState();
   const [licencePhoto, setLicencePhoto] = useState([]);
   const [dateERR, setdateERR] = useState(false);
   const [fieldsErr, setFieldsErr] = useState("");
@@ -40,10 +48,14 @@ function SingleRent({ model, pricePerDay, imageUrl, _id, isAvailable }) {
     formDataOrder.append("photos", licencePhoto[1]);
     formDataOrder.append("pickUpDay", startDatePickup);
     formDataOrder.append("returnDay", startDateReturn);
-    formDataOrder.append(
-      "ammount",
-      Math.abs((dayReturn - dayPick) * pricePerDay)
-    );
+    // formDataOrder.append(
+    //   "ammount",
+    //   Math.abs(
+    //     ((dayReturn.getTime() - dayPick.getTime()) / (1000 * 3600 * 24)) *
+    //       pricePerDay
+    //   )
+    // );
+    formDataOrder.append("ammount", differenceInDays * pricePerDay);
 
     if (startDatePickup && startDateReturn && licencePhoto.length > 0) {
       axios
@@ -134,23 +146,42 @@ function SingleRent({ model, pricePerDay, imageUrl, _id, isAvailable }) {
                 onChange={(e) => {
                   let today = new Date().getDate();
                   let currentMonth = new Date().getMonth() + 1;
-                  console.log(currentMonth);
+                  let currentYear = new Date().getFullYear();
+                  // console.log(currentYear);
+                  // console.log(currentMonth);
                   let pickUpDay = e.target.value.split("-")[2];
                   let pickUpMonthInput =
                     new Date(e.target.value).getMonth() + 1;
-                  if (pickUpMonthInput > currentMonth) {
+                  let pickupYearInput = new Date(e.target.value).getFullYear();
+                  // console.log(pickupYearInput);
+                  if (
+                    pickUpMonthInput > currentMonth &&
+                    pickupYearInput >= currentYear
+                  ) {
                     setdateERR(false);
                     setStartDatePickup(e.target.value);
                     setDayPick(Number(e.target.value.split("-")[2]));
                     setPickUpMonth(pickUpMonthInput);
+                    setPickUpYear(pickupYearInput);
                   } else if (
                     pickUpMonthInput === currentMonth &&
+                    pickupYearInput === currentYear &&
                     pickUpDay >= today
                   ) {
                     setdateERR(false);
                     setStartDatePickup(e.target.value);
                     setDayPick(Number(e.target.value.split("-")[2]));
                     setPickUpMonth(pickUpMonthInput);
+                    setPickUpYear(pickupYearInput);
+                  } else if (
+                    pickUpMonthInput <= currentMonth &&
+                    pickupYearInput > currentYear
+                  ) {
+                    setdateERR(false);
+                    setStartDatePickup(e.target.value);
+                    setDayPick(Number(e.target.value.split("-")[2]));
+                    setPickUpMonth(pickUpMonthInput);
+                    setPickUpYear(pickupYearInput);
                   } else {
                     setdateERR(true);
                   }
@@ -169,26 +200,46 @@ function SingleRent({ model, pricePerDay, imageUrl, _id, isAvailable }) {
                 onChange={(e) => {
                   let today = new Date().getDate();
                   let currentMonth = new Date().getMonth() + 1;
-
+                  let currentYear = new Date().getFullYear();
                   let returnMonth = new Date(e.target.value).getMonth() + 1;
+                  let returnYearInput = new Date(e.target.value).getFullYear();
+                  // console.log(returnYearInput);
                   let returnDay = e.target.value.split("-")[2];
 
-                  if (Number(returnMonth) > Number(pickUpMonth)) {
-                    setdateERR(false);
-                    setStartDateReturn(e.target.value);
-                    setDayReturn(Number(returnDay));
-                  } else if (
-                    Number(returnMonth) === Number(pickUpMonth) &&
-                    Number(returnDay) >= Number(dayPick)
+                  if (
+                    Number(returnMonth) > Number(pickUpMonth) &&
+                    Number(returnYearInput) >= Number(pickUpYear)
                   ) {
                     setdateERR(false);
                     setStartDateReturn(e.target.value);
                     setDayReturn(Number(returnDay));
                   } else if (
                     Number(returnMonth) === Number(pickUpMonth) &&
+                    Number(returnDay) >= Number(dayPick) &&
+                    Number(returnYearInput) >= Number(pickUpYear)
+                  ) {
+                    setdateERR(false);
+                    setStartDateReturn(e.target.value);
+                    setDayReturn(Number(returnDay));
+                  } else if (
+                    Number(returnMonth) === Number(pickUpMonth) &&
+                    Number(returnDay) <= Number(dayPick) &&
+                    Number(returnYearInput) >= Number(pickUpYear)
+                  ) {
+                  } else if (
+                    Number(returnMonth) === Number(pickUpMonth) &&
                     Number(currentMonth) === Number(pickUpMonth) &&
+                    Number(currentYear) === Number(pickUpYear) &&
                     Number(returnDay) >= Number(today) &&
                     Number(returnDay) >= Number(dayPick)
+                  ) {
+                    setdateERR(false);
+                    setStartDateReturn(e.target.value);
+                    setDayReturn(Number(returnDay));
+                  } else if (
+                    Number(returnMonth) < Number(pickUpMonth) &&
+                    // Number(returnDay) >= Number(dayPick)
+                    Number(pickUpYear) < Number(returnYearInput)
                   ) {
                     setdateERR(false);
                     setStartDateReturn(e.target.value);
@@ -212,16 +263,13 @@ function SingleRent({ model, pricePerDay, imageUrl, _id, isAvailable }) {
               </span>
               <span className="text-[red]">{fieldsErr && fieldsErr}</span>
             </div>
-            <button className="btn">
-              <span class="text">
+            <button className="btn ">
+              <span class="text ">
                 {" "}
                 Amount :{" "}
-                {dayReturn && dayPick
-                  ? Math.abs((dayReturn - dayPick) * pricePerDay)
-                  : 0}{" "}
-                Dt
+                {dayReturn && dayPick ? differenceInDays * pricePerDay : 0} Dt
               </span>
-              <span class="blob"></span>
+              <span class="blob "></span>
               <span class="blob"></span>
               <span class="blob"></span>
               <span class="blob"></span>

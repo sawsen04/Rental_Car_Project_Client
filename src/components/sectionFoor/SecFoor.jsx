@@ -26,9 +26,9 @@ const Slideshow = () => {
       <Zoom {...zoomOutProperties}>
         {images.map((each, index) => (
           <img
-            className="m-auto rounded-xl"
+            className="m-auto rounded-xl w-[40%] "
             key={index}
-            style={{ width: "40%" }}
+            // style={{ width: "40%" }}
             src={each}
             alt=""
           />
@@ -40,7 +40,7 @@ const Slideshow = () => {
 function SecFoor() {
  // const navigate = useNavigate();
   return (
-    <div className="pb-24 pt-12 dark:bg-dark bg-slate-100 dark:text-white">
+    <div className="md:pb-24 pb-7 md:pt-12 pt- dark:bg-dark bg-slate-100 dark:text-white">
       <div className="md:flex md:flex-col justify-center items-center">
         <h1
           data-aos="fade-up"

@@ -12,7 +12,7 @@ const bannerImg = {
 };
 function AppSec() {
   return (
-    <div className="container pb-40 bg-white dark:bg-black dark:text-white">
+    <div className="container md:pb-40 pb-10 bg-white dark:bg-black dark:text-white">
       <div
         className="text-black py-10 sm:min-h-[400px] sm:grid sm:place-items-center rounded-xl"
         style={bannerImg}
