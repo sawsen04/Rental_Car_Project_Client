@@ -68,7 +68,7 @@ function NavBar({ theme, setTheme }) {
         </div>
       </div>
 
-      <div className="md:flex hidden justify-between  w-[28%]  ">
+      <div className="md:flex hidden justify-center gap-8  w-[28%]  ">
         {token && isUser ? (
           <>
             <NavLink to="/profile">
@@ -147,7 +147,7 @@ function NavBar({ theme, setTheme }) {
       {showMobileNav && (
         <MobileNav>
           <>
-            <div className="flex flex-col justify-between items-center w-[100%]">
+            <div className="flex flex-col justify-between items-center p-2 w-[100%]">
               <ul className="flex flex-col items-center gap-4  w-[90%] ">
                 <li className="font-bold hover:border-b-2 hover:text-primary hover:border-primary transition-colors duration-500">
                   <NavLink to="/">Home</NavLink>
@@ -188,7 +188,7 @@ function NavBar({ theme, setTheme }) {
                 )}
               </div>
             </div>
-            <div className="flex flex-col items-center gap-3  w-[100%] ">
+            <div className="flex flex-col items-center gap-3  w-[100%] p-4">
               {token && isUser ? (
                 <>
                   <NavLink to="/profile">
