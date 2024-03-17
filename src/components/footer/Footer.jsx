@@ -14,7 +14,7 @@ function Footer() {
         <img
           src="https://www.blacktint-lyon.fr/wp-content/uploads/2017/10/homescreen-final2.jpg"
           alt=""
-          className="absolute z-10 md:w-auto md:min-w-full  md:max-w-none md:h-[60vh] h-[90vh]"
+          className="absolute z-10 md:w-auto md:min-w-full  md:max-w-none md:h-[60vh] h-[100vh]"
         />
       </div>
       <div className=" footer relative  z-20 ">
